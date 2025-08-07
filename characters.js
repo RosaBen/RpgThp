@@ -105,3 +105,42 @@ export class Assassin extends Character {
   }
 }
 
+export class Wizard extends Character {
+
+  constructor() {
+    super("Gandalf", 10, 2, 200)
+    this.description = "magicien avec une attaque magique puissante"
+  }
+
+  fireball(victim) {
+    if (this.mana >= 25) {
+      console.log(`${this.name} lance Wizard Fireball sur ${victim.name} et inflige 7 dégats`)
+      this.mana -= 25;
+      victim.takeDamage(7);
+      console.log(`${this.name} a ${this.mana} mana restants`)
+    } else {
+      console.log(`${this.name} n'a pas assez de mana, attaque normale utilisée.`)
+      this.dealDamage(victim);
+    }
+  }
+}
+
+export class Monster extends Character {
+
+  constructor() {
+    super("ET", 10, 5, 100)
+    this.description = "monstre magique"
+  }
+
+  Crocs(victim) {
+    if (this.mana >= 10) {
+      console.log(`${this.name} lance Monster Crocs sur ${victim.name} et inflige 7 dégats`)
+      this.mana -= 10;
+      victim.takeDamage(7);
+      console.log(`${this.name} a ${this.mana} mana restants`)
+    } else {
+      console.log(`${this.name} n'a pas assez de mana, attaque normale utilisée.`)
+      this.dealDamage(victim);
+    }
+  }
+}
