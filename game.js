@@ -1,4 +1,4 @@
-import { Assassin, Berzerker, Fighter, Monk, Paladin } from "./characters.js";
+import { Assassin, Berzerker, Fighter, Monk, Monster, Paladin, Wizard } from "./characters.js";
 
 export class Game {
   constructor() {
@@ -9,6 +9,8 @@ export class Game {
       new Monk(),
       new Berzerker(),
       new Assassin(),
+      new Wizard(),
+      new Monster(),
     ];
   }
 
